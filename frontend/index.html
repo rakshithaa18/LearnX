@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LearnX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-blur"></div>
+
+<div class="app-layout">
+  
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
+
+    <h2 class="logo">LearnX</h2>
+
+    <div class="sidebar-section">
+      <h4>Recent Topics</h4>
+      <div id="history" class="history-list"></div>
+    </div>
+    <div class="language-dropdown">
+  <button id="language-btn">🌐 Language</button>
+
+  <div id="language-menu" class="language-menu">
+    <div onclick="setLanguage('English')">English</div>
+    <div onclick="setLanguage('Hindi')">Hindi</div>
+    <div onclick="setLanguage('Kannada')">Kannada</div>
+    <div onclick="setLanguage('Tamil')">Tamil</div>
+    <div onclick="setLanguage('Telugu')">Telugu</div>
+  </div>
+</div>
+    <div class="sidebar-section">
+      <h4>Audio</h4>
+      <button class="sidebar-btn" onclick="readAloud()">🔊 Read Aloud</button>
+      <button class="sidebar-btn stop" onclick="stopRead()">⏹ Stop</button>
+    </div>
+
+    <div class="sidebar-section">
+      <h4>Learn More</h4>
+      <div id="youtube-links"></div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <div class="header">
+      <h1>Learn Concepts Step-by-Step</h1>
+      <p>Understand → Code → Practice</p>
+    </div>
+
+    <div class="search-card">
+      <input
+        id="concept"
+        placeholder="Start typing a concept..."
+        onkeyup="showSuggestions()"
+        autocomplete="off"
+      />
+      <button onclick="startListening()">🎙</button>
+      <button onclick="generate()">✨ Learn</button>
+    </div>
+
+    <div class="difficulty">
+      <span>Select level:</span>
+      <button class="level active" onclick="setLevel('beginner')">Beginner</button>
+      <button class="level" onclick="setLevel('intermediate')">Intermediate</button>
+      <button class="level" onclick="setLevel('advanced')">Advanced</button>
+    </div>
+
+    <div id="suggestions" class="suggestions"></div>
+    <div id="progress" class="progress"></div>
+
+    <!-- AI OUTPUT -->
+    <div id="output"></div>
+
+   
+
+      <!-- Interactive Quiz Injected Here -->
+      <div id="quiz-container"></div>
+
+      <!-- Score Result -->
+      <div id="quiz-result"></div>
+
+    </div>
+
+  </main>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
